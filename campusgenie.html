@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusGenie AI | Futuristic Assistant</title>
+    <link rel="stylesheet" href="campusgenie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="orb"></div>
+    <div class="orb orb-2"></div>
+
+    <main class="dashboard-container">
+        <header class="header">
+            <h1 class="glitch" data-text="CAMPUSGENIE AI">CAMPUSGENIE AI</h1>
+            <div class="status-bar">
+                <span id="campus-level">LEVEL: CAMPUS ROOKIE</span>
+                <span class="pulse-icon"></span> ONLINE
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            <section class="glass-panel ai-panel">
+                <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                <div class="chat-display" id="ai-display">
+                    <p class="bot-msg">System initialized. How can I help you today, Student?</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="ai-input" placeholder="Ask about printing, food, study...">
+                    <button onclick="handleAIQuery()"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </section>
+
+            <section class="glass-panel map-panel">
+                <h3><i class="fas fa-map-marked-alt"></i> Location Intel</h3>
+                <div class="map-grid">
+                    <button class="map-btn" onclick="showMapInfo('library')">Library</button>
+                    <button class="map-btn" onclick="showMapInfo('cafeteria')">Cafeteria</button>
+                    <button class="map-btn" onclick="showMapInfo('bus')">Bus Stop</button>
+                    <button class="map-btn" onclick="showMapInfo('clinic')">Clinic</button>
+                </div>
+                <div id="map-details" class="details-box">Click a location to scan info...</div>
+            </section>
+
+            <section class="glass-panel budget-panel">
+                <h3><i class="fas fa-wallet"></i> Budget Optimizer</h3>
+                <div class="budget-inputs">
+                    <input type="number" id="food-cost" placeholder="Food ($)">
+                    <input type="number" id="transport-cost" placeholder="Transport ($)">
+                </div>
+                <button class="action-btn" onclick="processBudget()">Analyze Spending</button>
+                <div id="budget-result" class="result-box"></div>
+            </section>
+
+            <section class="glass-panel schedule-panel">
+                <h3><i class="fas fa-calendar-alt"></i> Time Architect</h3>
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Next class or task...">
+                    <button onclick="addSchedule()"><i class="fas fa-plus"></i></button>
+                </div>
+                <ul id="schedule-list" class="styled-list"></ul>
+                <div id="schedule-tip" class="tip-highlight"></div>
+            </section>
+
+            <section class="glass-panel survival-panel">
+                <h3><i class="fas fa-shield-halved"></i> Survival Protocol</h3>
+                <div id="rotating-tip" class="rotating-text">Loading campus secrets...</div>
+            </section>
+        </div>
+    </main>
+
+    <script src="campusgenie.js"></script>
+</body>
+</html>
